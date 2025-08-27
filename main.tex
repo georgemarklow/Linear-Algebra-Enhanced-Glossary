@@ -1,0 +1,445 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\begin{document}
+
+\frontmatter
+\title{Glossary of Linear Algebra --- MIT 18.06}
+\author{}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Adjacency Matrix of a Graph}
+Let $G = (V,E)$ be a graph with vertices
+\[
+V = \{v_1, v_2, \dots, v_n\}.
+\]
+
+The \emph{adjacency matrix} of $G$ is the $n \times n$ matrix
+\[
+A = (a_{ij}),
+\]
+defined by
+\[
+a_{ij} =
+\begin{cases}
+1, & \text{if there is an edge between } v_i \text{ and } v_j, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\begin{itemize}
+  \item If $G$ is undirected, then $A$ is symmetric ($A = A^T$).
+  \item If $G$ is directed, $A$ need not be symmetric: $a_{ij}=1$ if there is an arrow from $v_i$ to $v_j$.
+  \item For weighted graphs, $a_{ij}$ equals the edge weight.
+\end{itemize}
+
+
+
+\chapter{Affine Transformation}
+$T(v) = Av + v_0$ = linear transformation plus shift.
+
+\chapter{Associative Law}
+$(AB)C = A(BC)$. Parentheses can be removed to leave $ABC$.
+
+\chapter{Augmented Matrix}
+$[A \mid b]$. $Ax = b$ is solvable when $b$ is in the column space of $A$; then $[A \mid b]$ has the same rank as $A$. Elimination on $[A \mid b]$ keeps equations correct.
+
+\chapter{Back Substitution}
+Upper triangular systems are solved in reverse order $x_n$ to $x_1$.
+
+\chapter{Basis}
+Independent vectors $v_1,\dots,v_d$ whose linear combinations give every $v$ in $V$. A vector space has many bases.
+
+\chapter{Big Formula for Determinants}
+$\det(A)$ is a sum of $n!$ terms, one for each permutation $P$ of the columns. That term is the product along the diagonal of the reordered matrix, times $\det(P) = \pm 1$.
+
+\chapter{Block Matrix}
+A matrix partitioned into blocks by cuts between rows and/or columns. Block multiplication $AB$ is allowed if block shapes permit (columns of $A$ and rows of $B$ in matching blocks).
+
+\chapter{Cayley--Hamilton Theorem}
+$p(\lambda) = \det(A - \lambda I)$ has $p(A) = 0$.
+
+\chapter{Change of Basis Matrix}
+Old basis vectors $v_j$ are linear combinations of new basis vectors $w_i$. Coordinates transform as $d = M c$.
+
+\chapter{Characteristic Equation}
+$\det(A - \lambda I) = 0$. Roots $\lambda$ are the eigenvalues of $A$.
+
+\chapter{Cholesky Factorization}
+$A = C C^T = (L \sqrt{D})(L \sqrt{D})^T$ for positive definite $A$.
+
+\chapter{Circulant Matrix}
+Constant diagonals wrap around like a cyclic shift $S$. Every circulant is $c_0 I + c_1 S + \cdots + c_{n-1} S^{n-1}$.
+
+\chapter{Cofactor}
+Remove row $i$, column $j$; multiply determinant by $(-1)^{i+j}$.
+
+\chapter{Column Picture of $Ax = b$}
+$b$ is a combination of the columns of $A$. Solvable only when $b \in \mathcal{C}(A)$.
+
+\chapter{Column Space}
+$\mathcal{C}(A)$ = all linear combinations of the columns of $A$.
+
+\chapter{Commuting Matrices}
+$AB = BA$. If diagonalizable, they share $n$ eigenvectors.
+
+\chapter{Companion Matrix}
+Put $c_1,\dots,c_n$ in last row, ones on subdiagonal. Its characteristic polynomial is $c_1 + c_2 \lambda + \cdots$.
+
+\chapter{Complete Solution}
+$x = x_p + x_n$. Particular solution $x_p$ plus nullspace solution $x_n$.
+
+\chapter{Complex Conjugate}
+For $z=a+ib$, $\bar z = a - ib$. $z \bar z = |z|^2$.
+
+\chapter{Condition Number}
+$\kappa(A) = \|A\|\|A^{-1}\| = \sigma_{\max}/\sigma_{\min}$. Measures sensitivity of $Ax=b$ to changes in $b$.
+
+\chapter{Conjugate Gradient Method}
+Iterative method for positive definite $Ax=b$ minimizing $\tfrac{1}{2}x^T A x - x^T b$ over Krylov subspaces.
+
+\chapter{Covariance Matrix}
+$\Sigma_{ij} = \mathbb{E}[x_i x_j]$ for centered random variables. $\Sigma$ is positive semidefinite.
+
+\chapter{Cramer’s Rule}
+For invertible $A$, $x_j = \det(B_j)/\det(A)$ where $B_j$ replaces column $j$ of $A$ with $b$.
+
+\chapter{Cross Product}
+In $\mathbb{R}^3$, $u \times v$ is perpendicular to $u,v$, with length $\|u\|\|v\|\sin\theta$.
+
+\chapter{Cyclic Shift}
+Permutation matrix shifting entries. Eigenvalues are $n$th roots of unity; eigenvectors are columns of Fourier matrix.
+
+\chapter{Determinant}
+$\det(I)=1$, row swap changes sign, linear in rows. $\det(AB)=\det A \det B$, $\det A^T = \det A$.
+
+\chapter{Diagonal Matrix}
+$d_{ij}=0$ if $i\neq j$.
+
+\chapter{Diagonalizable Matrix}
+Has $n$ independent eigenvectors $\Rightarrow S^{-1} A S = \Lambda$ diagonal.
+
+\chapter{Diagonalization}
+$A=S\Lambda S^{-1}$, with $\Lambda$ diagonal of eigenvalues.
+
+\chapter{Dimension}
+$\dim V$ = number of vectors in a basis.
+
+\chapter{Distributive Law}
+$A(B+C)=AB+AC$.
+
+\chapter{Dot Product}
+$x^T y = \sum x_i y_i$. Zero dot product $\Leftrightarrow$ orthogonal.
+
+\chapter{Echelon Matrix}
+Row-echelon form: pivots staggered, zero rows at bottom.
+
+\chapter{Eigenvalue and Eigenvector}
+$Ax=\lambda x$, $x\neq 0$, $\det(A-\lambda I)=0$.
+
+\chapter{Elimination}
+Row operations reducing $A$ to triangular form $U$ (or reduced form $R$). $A=LU$.
+
+\chapter{Ellipse}
+$x^T A x=1$ for positive definite $A$. Eigenvectors give ellipse axes.
+
+\chapter{Exponential of a Matrix}
+$e^{At} = I + At + \frac{(At)^2}{2!}+\cdots$. Derivative: $A e^{At}$. Solves $u'(t)=Au$.
+
+\chapter{Four Fundamental Subspaces}
+For $A \in \mathbb{R}^{m \times n}$:
+\[
+\mathcal{C}(A), \quad \mathcal{N}(A), \quad \mathcal{C}(A^T), \quad \mathcal{N}(A^T).
+\]
+These subspaces are mutually orthogonal in pairs and fundamental to linear algebra.
+
+\chapter{Fourier Series}
+Representation of periodic functions $f(x)$ as sums of sines and cosines:
+\[
+f(x) \sim a_0 + \sum_{n=1}^\infty (a_n \cos nx + b_n \sin nx).
+\]
+
+\chapter{Fourier Transform}
+Integral transform converting functions between time and frequency domain:
+\[
+\hat f(\xi) = \int_{-\infty}^\infty f(x) e^{-2\pi i x \xi} dx.
+\]
+
+\chapter{Frobenius Norm}
+\[
+\|A\|_F = \left( \sum_{i,j} |a_{ij}|^2 \right)^{1/2}.
+\]
+
+\chapter{Fundamental Theorem of Linear Algebra}
+The four subspaces are related by orthogonal complements:
+\[
+\mathcal{C}(A)^\perp = \mathcal{N}(A^T), \quad \mathcal{C}(A^T)^\perp = \mathcal{N}(A).
+\]
+
+\chapter{Gauss--Jordan Elimination}
+Row reduction producing reduced row echelon form (RREF).
+
+\chapter{Gaussian Elimination}
+Row operations to reduce $A$ to upper triangular form $U$.
+
+\chapter{General Linear Group}
+$GL(n,\mathbb{R})$ = set of invertible $n \times n$ real matrices.
+
+\chapter{General Solution}
+Complete solution of $Ax=b$: $x_p + x_n$.
+
+\chapter{Geometric Multiplicity}
+Dimension of eigenspace corresponding to an eigenvalue.
+
+\chapter{Gram--Schmidt Process}
+Algorithm for orthogonalizing a set of vectors.
+
+\chapter{Gram Matrix}
+$G = A^T A$. Positive semidefinite.
+
+\chapter{Graph Laplacian}
+$L = D - A$ where $D$ is degree matrix, $A$ adjacency matrix.
+
+\chapter{Greatest Integer Function}
+$\lfloor x \rfloor$ = largest integer $\leq x$.
+
+\chapter{Hadamard Matrix}
+Square $\pm 1$ matrix with orthogonal rows.
+
+\chapter{Hadamard Product}
+Entrywise product $(A \circ B)_{ij} = a_{ij} b_{ij}$.
+
+\chapter{Hermitian Matrix}
+$A = A^*$. Eigenvalues are real.
+
+\chapter{Hilbert Matrix}
+$H_{ij} = \tfrac{1}{i+j-1}$. Ill-conditioned.
+
+\chapter{Householder Matrix}
+$H = I - 2uu^T$ for unit vector $u$. Reflects across hyperplane.
+
+\chapter{Identity Matrix}
+$I_n$ = $n \times n$ matrix with $1$ on diagonal, $0$ elsewhere.
+
+\chapter{Image}
+$\mathrm{Im}(A) = \mathcal{C}(A)$.
+
+\chapter{Inner Product}
+$\langle x,y \rangle = x^Ty$ (or $y^* x$ for complex).
+
+\chapter{Inverse Matrix}
+$A^{-1}$ satisfies $AA^{-1}=I$.
+
+\chapter{Inverse of a Partitioned Matrix}
+Blockwise formulas using Schur complement.
+
+\chapter{Isomorphism}
+Linear bijection between vector spaces.
+
+\chapter{Iteration Matrix}
+$M$ used in iterative methods: $x^{(k+1)} = M x^{(k)} + c$.
+
+\chapter{Jordan Canonical Form}
+$A = P J P^{-1}$, $J$ block diagonal with Jordan blocks.
+
+\chapter{Kernel}
+Nullspace $\mathcal{N}(A)$.
+
+\chapter{Krylov Subspace}
+$\mathcal{K}_k(A,r) = \mathrm{span}\{r, Ar, A^2 r, \dots, A^{k-1}r\}$.
+
+\chapter{Least Squares Problem}
+Solve $\min \|Ax-b\|_2$. Normal equations: $A^TAx=A^Tb$.
+
+\chapter{LU Factorization}
+$A=LU$ with lower $L$, upper $U$.
+
+\chapter{Markov Matrix}
+Square matrix with nonnegative entries and each column summing to 1.
+
+\chapter{Matrix Norm}
+Any function $\|\cdot\|$ satisfying norm properties extended to matrices.
+
+\chapter{Minimal Polynomial}
+Smallest degree monic polynomial $p$ such that $p(A)=0$.
+
+\chapter{Moore--Penrose Pseudoinverse}
+$A^+$ gives least squares solution: $x=A^+ b$.
+
+\chapter{Normal Equations}
+For least squares: $A^T A x = A^T b$.
+
+\chapter{Normal Matrix}
+$A$ satisfies $AA^* = A^* A$. Diagonalizable by a unitary matrix.
+
+\chapter{Norm of a Vector}
+$\|x\|_p = (|x_1|^p + \cdots + |x_n|^p)^{1/p}$ for $p \geq 1$.
+
+\chapter{Nullspace}
+$\mathcal{N}(A) = \{x : Ax=0\}$.
+
+\chapter{Nullity}
+Dimension of $\mathcal{N}(A)$.
+
+\chapter{Numerical Rank}
+Effective rank determined by singular values above tolerance.
+
+\chapter{Orthogonal Complement}
+$V^\perp = \{x : x^Tv=0 \ \forall v\in V\}$.
+
+\chapter{Orthogonal Matrix}
+$Q^T Q = I$. Inverse equals transpose.
+
+\chapter{Orthogonal Projection}
+$P = QQ^T$ for orthonormal $Q$.
+
+\chapter{Orthogonal Subspaces}
+$U \perp V$ if $u^Tv=0$ for all $u \in U$, $v \in V$.
+
+\chapter{Orthogonal Vectors}
+$x^Ty=0$.
+
+\chapter{Orthonormal Vectors}
+$x^Ty = 0$ if $x \neq y$, and $\|x\|=1$.
+
+\chapter{Outer Product}
+$uv^T$.
+
+\chapter{Partial Pivoting}
+Row swaps in elimination to control growth.
+
+\chapter{Permutation Matrix}
+Matrix obtained from $I$ by permuting rows.
+
+\chapter{Pivot}
+First nonzero entry in each row after elimination.
+
+\chapter{Poisson Matrix}
+Tridiagonal with $2$ on diagonal and $-1$ on off-diagonal, from discretized Laplace operator.
+
+\chapter{Polar Decomposition}
+$A = Q H$ with $Q$ orthogonal, $H$ symmetric positive semidefinite.
+
+\chapter{Positive Definite Matrix}
+$x^T A x > 0$ for all $x \neq 0$.
+
+\chapter{Power Method}
+Iterative method converging to dominant eigenvector.
+
+\chapter{Principal Axis Theorem}
+Real symmetric $A$ diagonalizable by orthogonal $Q$: $A=Q\Lambda Q^T$.
+
+\chapter{Projection Matrix}
+$P^2=P$, $\mathcal{C}(P)$ is subspace onto which vectors are projected.
+
+\chapter{Pseudoinverse}
+See Moore–Penrose pseudoinverse.
+
+\chapter{QR Factorization}
+$A=QR$ with $Q$ orthogonal, $R$ upper triangular.
+
+\chapter{Quadratic Form}
+$x^T A x$.
+
+\chapter{Range}
+Column space.
+
+\chapter{Rank}
+Dimension of $\mathcal{C}(A)$.
+
+\chapter{Rank--Nullity Theorem}
+$\dim\mathcal{C}(A) + \dim\mathcal{N}(A) = n$.
+
+\chapter{Rayleigh Quotient}
+$R(x) = \dfrac{x^T A x}{x^T x}$.
+
+\chapter{Reduced Row Echelon Form}
+Unique row echelon form with pivot 1s and zeros above and below.
+
+\chapter{Reflection Matrix}
+$H=I-2uu^T$. Orthogonal, symmetric.
+
+\chapter{Ritz Values}
+Eigenvalues of projected matrix $Q^T A Q$.
+
+\chapter{Row Picture of $Ax=b$}
+Each equation is a hyperplane; solution is intersection.
+
+\chapter{Row Space}
+$\mathcal{C}(A^T)$.
+
+\chapter{Schur Complement}
+If $A=\begin{bmatrix} B & C \\ D & E\end{bmatrix}$ with $B$ invertible, then $S=E-DB^{-1}C$.
+
+\chapter{Schur’s Theorem}
+Every square $A$ is unitarily similar to upper triangular.
+
+\chapter{Similarity}
+$A$ and $B$ are similar if $A=SBS^{-1}$.
+
+\chapter{Singular Matrix}
+$\det A=0$.
+
+\chapter{Singular Value Decomposition (SVD)}
+$A=U\Sigma V^T$ with orthogonal $U,V$.
+
+\chapter{Singular Values}
+Square roots of eigenvalues of $A^TA$.
+
+\chapter{Skew-Symmetric Matrix}
+$A^T=-A$. Eigenvalues are purely imaginary.
+
+\chapter{Spectral Decomposition}
+$A=Q\Lambda Q^T$ for symmetric $A$.
+
+\chapter{Spectral Radius}
+$\rho(A)=\max |\lambda|$ over eigenvalues.
+
+\chapter{Spectrum}
+Set of eigenvalues.
+
+\chapter{Square Matrix}
+$n \times n$ matrix.
+
+\chapter{Stability}
+Bounded perturbations lead to bounded solutions.
+
+\chapter{Stochastic Matrix}
+Square with nonnegative entries, columns sum to 1.
+
+\chapter{Subspace}
+Subset closed under addition and scalar multiplication.
+
+\chapter{Symmetric Matrix}
+$A=A^T$. Real eigenvalues, orthogonal eigenvectors.
+
+\chapter{Toeplitz Matrix}
+Constant diagonals.
+
+\chapter{Trace}
+$\mathrm{tr}(A)=\sum a_{ii}$. Invariant under similarity.
+
+\chapter{Triangular Matrix}
+Upper or lower triangular.
+
+\chapter{Tridiagonal Matrix}
+Nonzeros only on diagonal and first off-diagonals.
+
+\chapter{Unitary Matrix}
+$U^*U=I$.
+
+\chapter{Vandermonde Matrix}
+Rows are powers of given numbers.
+
+\chapter{Vector Space}
+Set closed under vector addition and scalar multiplication.
+
+\backmatter
+
+\end{document}
